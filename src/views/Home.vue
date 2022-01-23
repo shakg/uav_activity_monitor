@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     go_to_specific_uav_address : function(uav_id){
-      window.location.href = "/specific-uav/" + uav_id;
+      window.location.href = "/#/specific-uav/" + uav_id;
     }
   },
   mounted: function(){
