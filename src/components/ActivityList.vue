@@ -78,7 +78,7 @@ export default {
     }
   },
   mounted : async function(){
-      await axios.get('https://api.jsonbin.io/b/61ed5ff01cdb114401230e4a').then(
+      await axios.get('https://api.jsonbin.io/b/61ed5ff01cdb114401230e4a/latest').then(
           (response)=>{
               console.log(response.data)
               this.database = response.data['database'];

@@ -47,7 +47,7 @@ export default {
           // across all devices. 
           
           // initialize database.
-          await axios.get('https://api.jsonbin.io/b/61ed5ff01cdb114401230e4a').then(
+          await axios.get('https://api.jsonbin.io/b/61ed5ff01cdb114401230e4a/latest').then(
               (response) => {
                   console.log(response);
                   this.database = response.data['database'];
