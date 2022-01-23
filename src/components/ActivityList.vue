@@ -69,7 +69,7 @@ export default {
             }
         }
         axios.put('https://api.jsonbin.io/b/61ed5ff01cdb114401230e4a', {
-            json_data : {'database' : this.database}
+            'database' : this.database
         }, header_config).then(
             (response) => {
                 console.log(response);
