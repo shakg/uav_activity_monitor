@@ -36,7 +36,7 @@ export default {
     }
   },
   mounted: function(){
-    this.uav_list = axios.get('http://localhost:5010/get_json').then(
+    this.uav_list = axios.get('https://api.jsonbin.io/b/61ed5ff01cdb114401230e4a').then(
       (response) => {
         this.uav_list = response.data['database'];
       }
