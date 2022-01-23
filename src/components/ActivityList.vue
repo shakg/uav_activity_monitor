@@ -73,7 +73,7 @@ export default {
     }
   },
   mounted : async function(){
-      await axios.get('http://localhost:5010/get_json').then(
+      await axios.get('https://api.jsonbin.io/b/61ed5ff01cdb114401230e4a').then(
           (response)=>{
               console.log(response.data)
               this.database = response.data['database'];
