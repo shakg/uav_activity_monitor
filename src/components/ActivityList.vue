@@ -63,9 +63,14 @@ export default {
         this.write_update_to_fs();
     },
     write_update_to_fs: function(){
-        axios.post('http://localhost:5010/write_json', {
+        const header_config = {
+            headers : {
+                "Content-Type" : "application/json",
+            }
+        }
+        axios.put('https://api.jsonbin.io/b/61ed5ff01cdb114401230e4a', {
             json_data : {'database' : this.database}
-        }).then(
+        }, header_config).then(
             (response) => {
                 console.log(response);
             }
