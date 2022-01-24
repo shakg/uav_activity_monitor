@@ -1,4 +1,4 @@
-# vue-activity-monitor
+# uav-activity-monitor
 
 ## Project setup
 ```
