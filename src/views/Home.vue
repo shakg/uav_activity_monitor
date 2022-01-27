@@ -1,33 +1,40 @@
 <template>
   <div class="home">
-    <Hero headline="UAV ACTIVITY MONITOR"/>
     <br>
-    <div v-for="uav in uav_list" :key="uav.uav_id" v-on:click="go_to_specific_uav_address(uav.uav_id)">
-      <UavCard 
-        :uav_id = "uav.uav_id"
-        :adhoc_ip = "uav.adhoc_ip"
-        :modal_name = "uav.modal_name"
-      />
-
-    </div>
+    <v-container>
+      <v-row>
+        <v-col
+         v-for="uav in uav_list" 
+         :key="uav.uav_id" 
+         @click="go_to_specific_uav_address(uav.uav_id)"
+         cols="12"
+         sm="4"
+         class="uav-card-wrapper"
+         >
+          <UavCard 
+            :uav_id = "uav.uav_id"
+            :adhoc_ip = "uav.adhoc_ip"
+            :modal_name = "uav.modal_name"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Hero from '../components/Hero.vue';
-import UavCard from '../components/UavCard.vue';
+import UavCard from "../components/UavCard.vue";
 import axios from 'axios';
+
 
 export default {
   name: "Home",
   data() {
-    return {
-      uav_list : []
-      }
-  },
+      return {
+        uav_list : []
+        }
+    },
   components: {
-    Hero,
     UavCard
   },
   methods: {
@@ -44,3 +51,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.uav-card-wrapper{
+  margin:3px;
+}
+</style>

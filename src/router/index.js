@@ -15,7 +15,7 @@ const routes = [
     path: "/specific-uav/:uav_id",
     name: "Specific UAV",
     component: SpecificUav,
-    props: true
+    props: true,
   },
 ];
 

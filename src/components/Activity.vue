@@ -1,9 +1,6 @@
 <template>
-  <div class="activity">
-      <h3>{{ activity_details }}</h3>
-  </div>
+    <h3>{{ activity_details }}</h3>
 </template>
-
 
 <script>
 export default {
@@ -13,10 +10,3 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.activity{
-  border-bottom: 1px solid white;
-}
-</style>

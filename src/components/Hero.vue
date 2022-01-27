@@ -1,10 +1,9 @@
 <template>
   <div class="hero">
-      <h1>TİTRA</h1>
-      <h3>{{ headline }}</h3>
+    <h1>TİTRA</h1>
+    <h3>{{ headline }}</h3>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -16,6 +15,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
+<style scoped></style>
