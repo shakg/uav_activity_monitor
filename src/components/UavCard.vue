@@ -1,13 +1,13 @@
 <template>
-
+<div style="margin:10px">
   <v-card
     class="mx-auto"
     dark
-    max-width="400"
+    elevation="2"
   >
     <v-card-title>
       <v-icon
-        large
+        medium
         left
       >
         mdi-airplane
@@ -15,28 +15,29 @@
       <span class="text-h6 font-weight-light">UAV ID {{uav_id}}</span>
     </v-card-title>
 
-    <v-card-text class="text-h5 font-weight-bold">
-      <span class="text-h6 font-weight-light">Ad-hoc IP : {{adhoc_ip}}</span> <br>
-      <span class="text-h6 font-weight-light">Modal Name : {{modal_name}}</span>
+    <v-card-text>
+      <span class="text-h6 font-weight-light">
+         <v-icon small left>
+          mdi-wifi
+        </v-icon>
+        Ad-hoc IP : {{adhoc_ip}}
+      </span> <br>
+      <span class="text-h6 font-weight-light">
+        <v-icon small left>
+          mdi-shape
+        </v-icon>
+        Modal Name : {{modal_name}}
+      </span>
+      <br>
+      <span class="text-h6 font-weight-light">
+        <v-icon small left>
+          {{ready_for_flight || "mdi-check-circle"}}
+        </v-icon>
+        Ready for flight
+      </span>
     </v-card-text>
   </v-card>
-
-
-  <!-- <div class="uav-card">
-    <h3 class="uav_id">
-      <b>UAV ID : {{ uav_id }}</b>
-    </h3>
-    <div class="inner-section">
-      <div class="adhoc-section">
-        <i class="ri-links-line child"></i>
-        <p class="child">Ad-hoc IP : {{ adhoc_ip }}</p>
-      </div>
-      <div class="modal-section">
-        <i class="ri-plane-line child"></i>
-        <p class="child">Modal : {{ modal_name }}</p>
-      </div>
-    </div>
-  </div> -->
+  </div>
 </template>
 
 <script>
@@ -47,6 +48,7 @@ export default {
     uav_id: String,
     adhoc_ip: String,
     modal_name: String,
+    ready_for_flight : Boolean
   },
 };
 </script>

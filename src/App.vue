@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-app-bar app color="black" dark>
-      <div class="d-flex align-center">
-        <v-span>
+      <div class="d-flex align-center text-center">
+        <v-span class="text-center">
           TİTRA UAV ACTIVITY MONITOR
         </v-span>
 

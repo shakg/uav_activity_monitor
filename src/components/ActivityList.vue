@@ -1,39 +1,69 @@
 <template>
+  <v-container style="margin:0px; overflow:no-scroll">
+    <v-row justify="space-around">
+      <v-card class="mx-auto" dark>
+        <v-app-bar
+          color="rgba(0, 0, 0, 0)"
+        >
+          <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon>
 
-    <div>
+          <v-toolbar-title class="text-h6 white--text pl-0">
+            Actions
+          </v-toolbar-title>
 
-        <v-card
-    class="mx-auto"
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="white"
+            icon
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </v-app-bar>
+
+        <v-card-text style="max-height:500px; overflow-y:scroll">
+          <div class="font-weight-bold ml-8 mb-2">
+            List of activities
+          </div>
+
+          <v-timeline
+            align-top
+            dense
+          >
+            <v-timeline-item
+              v-for="activity in activity_list"
+              :key="activity.id"
+              :color="white"
+              small
+            >
+              <div>
+                <div class="font-weight-normal">
+                  <strong>{{ activity.from }}</strong> @{{ activity.date }}
+                </div>
+                <div>{{ activity.details }}</div>
+                   <div v-for="tag in activity.tags" :key="tag.id">
+                     <v-chip class="ma-1 text-small" color="white" text-color="black">
+                      <v-icon left x-small>
+                        {{tag.icon || "mdi-wrench"}}
+                      </v-icon>
+                      <div class="font-size:9px">
+                        {{ tag.detail || "Needs maintanance"}}
+                      </div>
+                    </v-chip>
+                   </div>
+              </div>
+            </v-timeline-item>
+          </v-timeline>
+        </v-card-text>
+      </v-card>
+
+    <v-card class="mx-auto mt-1"
     dark
-    max-width="400"
-  >
+    
+    >
     <v-card-title>
       <v-icon
-        large
-        left
-      >
-        mdi-view-list
-      </v-icon>
-      <span class="text-h6 font-weight-light">List of activities</span>
-    </v-card-title>
-         <v-card-text
-        v-for="activity in activity_list"
-        :key="activity.id"
-        style="border-bottom:1px solid white; border-top:1px solid white; padding:5px"
-      >
-            <Activity :activity_details.sync="activity.details" />
-         </v-card-text>
-        </v-card>
-        <br>
-
-        <v-card
-    class="mx-auto"
-    dark
-    max-width="400 "
-  >
-    <v-card-title>
-      <v-icon
-        large
+        medium
         left
       >
         mdi-comment-plus
@@ -45,7 +75,7 @@
       <v-row>
         <v-col
           cols="12"
-          md="4"
+          md="3"
         >
           <v-text-field
             v-model="firstname"
@@ -57,7 +87,7 @@
 
         <v-col
           cols="12"
-          md="4"
+          md="3"
         >
           <v-text-field
             v-model="lastname"
@@ -67,7 +97,7 @@
         </v-col>
         <v-col
           cols="12"
-          md="4"
+          md="3"
         >
           <v-text-field
             v-model="lastname"
@@ -94,11 +124,11 @@
           cols="12"
           md="12"
         >
-            <v-btn
+    <v-btn
       :loading="loading3"
       :disabled="loading3"
-      color="light-blue"
-      class="ma-2 white--text"
+      color="white"
+      class="ma-2 black--text"
       @click="loader = 'loading3'"
     >
       Upload
@@ -114,12 +144,38 @@
       </v-row>
     </v-container>
   </v-form>
-        </v-card>
-    </div>
+      </v-card>
+    </v-row>
+  </v-container>
 </template>
+<!--    <div style="margin:10px">
+        <v-card
+    class="mx-auto"
+    dark
+  >
+    <v-card-title>
+      <v-icon
+        large
+        left
+      >
+        mdi-view-list
+      </v-icon>
+    <span class="text-h6 font-weight-light">List of activities</span>
+    </v-card-title>
+         <v-card-text
+        v-for="activity in activity_list"
+        :key="activity.id"
+        style="border-bottom:1px solid white; border-top:1px solid white; padding:5px"
+      >
+            <Activity :activity_details.sync="activity.details" />
+         </v-card-text>
+        </v-card>
+        <br>
 
+    
+    </div>
+-->
 <script>
-import Activity from "../components/Activity.vue";
 import axios from "axios";
 
 export default {
@@ -132,9 +188,6 @@ export default {
       activity_list: null,
       database: null,
     };
-  },
-  components: {
-    Activity,
   },
   methods: {
     update_uav_activity: function () {

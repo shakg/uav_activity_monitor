@@ -1,7 +1,7 @@
 <template>
   <div class="specific_uav">
-    <UavCard :uav_id="uav_id" :adhoc_ip="adhoc_ip" :modal_name="modal_name" />
-    <br />
+    <!-- <UavCard :uav_id="uav_id" :adhoc_ip="adhoc_ip" :modal_name="modal_name" />
+    <br /> -->
     <ActivityList :uav_id="uav_id" />
     <br />
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 // @ is an alias to /src
-import UavCard from "../components/UavCard.vue";
+//import UavCard from "../components/UavCard.vue";
 import ActivityList from "../components/ActivityList.vue";
 import axios from "axios";
 
@@ -26,7 +26,7 @@ export default {
     uav_id: String,
   },
   components: {
-    UavCard,
+    // UavCard,
     ActivityList,
   },
   methods: {

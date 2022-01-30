@@ -8,7 +8,8 @@
          :key="uav.uav_id" 
          @click="go_to_specific_uav_address(uav.uav_id)"
          cols="12"
-         sm="4"
+         sm="6"
+         lg="2"
          class="uav-card-wrapper"
          >
           <UavCard 
