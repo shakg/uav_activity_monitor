@@ -1,26 +1,12 @@
 <template>
-  <v-app>
-    <v-app-bar app color="black" dark>
-      <div class="d-flex align-center text-center">
-        <v-span class="text-center">
-          TİTRA UAV ACTIVITY MONITOR
-        </v-span>
-
-      </div>
-
-      <v-spacer></v-spacer>
-    </v-app-bar>
-
-    <v-main>
-      <router-view />
-    </v-main>
+  <v-app style="top:0px; left:0px; margin:0px; padding:0px">
+    <router-view />
   </v-app>
 </template>
 
 <script>
 export default {
   name: "App",
-
   data: () => ({
     //
   }),

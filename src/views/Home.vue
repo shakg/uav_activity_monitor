@@ -1,15 +1,16 @@
 <template>
   <div class="home">
     <br>
-    <v-container>
+    <v-container fluid>
       <v-row>
         <v-col
          v-for="uav in uav_list" 
          :key="uav.uav_id" 
          @click="go_to_specific_uav_address(uav.uav_id)"
          cols="12"
+         xs="12"
          sm="6"
-         lg="2"
+         lg="3"
          class="uav-card-wrapper"
          >
           <UavCard 

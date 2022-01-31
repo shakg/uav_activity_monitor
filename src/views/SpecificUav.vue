@@ -73,7 +73,4 @@ export default {
 </script>
 
 <style scoped>
-.specific_uav{
-  margin-top:20px;
-}
 </style>
