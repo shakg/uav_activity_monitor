@@ -3,7 +3,7 @@
     <br>
     <v-container fluid>
       <v-row>
-        Hey this is a issue id -> {{issue_id}}
+        Hey this is a issue id -> {{id}}
       </v-row>
     </v-container>
   </div>
@@ -14,7 +14,7 @@
 export default {
   name: "GitlabIssue",
   props: {
-    issue_id : String
+    id : String
   },
   data() {
    
